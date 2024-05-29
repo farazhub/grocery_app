@@ -1,6 +1,6 @@
 import 'constants.dart';
 import 'package:flutter/material.dart';
-
+import 'home_screen.dart';
 class No_internet_connection extends StatelessWidget {
   const No_internet_connection({super.key});
 
@@ -57,7 +57,11 @@ class No_internet_connection extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(bottom: 5),
-                  child: buildOutlinedButton(onPressed: (){}, buttonColor: Kgreen, buttonTextColor: Kwhite,),
+                  child: buildOutlinedButton(onPressed: (){
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => HomePage()),
+                    );
+                  }, buttonColor: Kgreen, buttonTextColor: Kwhite,),
                 ),
                 buildOutlinedButton(onPressed: (){}, buttonColor: Kwhite, buttonTextColor: Kgreen,),
               ],
