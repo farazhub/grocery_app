@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'no_internet_connection.dart';
+import 'splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.light(),
             fontFamily: 'Poppins'),
         home: Scaffold(
-          body: No_internet_connection(),
+          body: SplashScreen(),
           ),
         );
   }

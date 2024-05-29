@@ -1,8 +1,6 @@
-import 'dart:ffi';
-import 'dart:nativewrappers/_internal/vm/lib/core_patch.dart';
 import 'constants.dart';
 import 'package:flutter/material.dart';
-
+import 'home_screen.dart';
 class No_internet_connection extends StatelessWidget {
   const No_internet_connection({super.key});
 
@@ -59,9 +57,13 @@ class No_internet_connection extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(bottom: 5),
-                  child: buildOutlinedButton(buttonColor: Kgreen, buttonTextColor: Kwhite,),
+                  child: buildOutlinedButton(onPressed: (){
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => HomePage()),
+                    );
+                  }, buttonColor: Kgreen, buttonTextColor: Kwhite,),
                 ),
-                buildOutlinedButton(buttonColor: Kwhite, buttonTextColor: Kgreen,),
+                buildOutlinedButton(onPressed: (){}, buttonColor: Kwhite, buttonTextColor: Kgreen,),
               ],
             )
           ],
@@ -72,14 +74,14 @@ class No_internet_connection extends StatelessWidget {
 }
 
 class buildOutlinedButton extends StatelessWidget {
-   buildOutlinedButton({required this.buttonColor, required this.buttonTextColor});
-   // String buttonText;
+   buildOutlinedButton({required this.onPressed, required this.buttonColor, required this.buttonTextColor});
+   Function onPressed;
    Color? buttonColor;
    Color? buttonTextColor;
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
-                onPressed: () {},
+                onPressed: onPressed(),
                 child: Text(
                   'buttonText',
                   style: TextStyle(
