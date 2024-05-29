@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'no_internet_connection.dart';
 import 'splash_screen.dart';
 
 void main() {

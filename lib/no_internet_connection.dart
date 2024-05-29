@@ -1,8 +1,9 @@
 import 'constants.dart';
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
+
 class No_internet_connection extends StatelessWidget {
-  const No_internet_connection({super.key});
+  No_internet_connection();
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,7 @@ class No_internet_connection extends StatelessWidget {
               ],
             ),
             Image(
-              image: AssetImage('images/no-internet.png'),
+              image: AssetImage("images/bro.png"),
             ),
             Text(
               'Oooops!!!',
@@ -57,13 +58,21 @@ class No_internet_connection extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(bottom: 5),
-                  child: buildOutlinedButton(onPressed: (){
-                    Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => HomePage()),
-                    );
-                  }, buttonColor: Kgreen, buttonTextColor: Kwhite,),
+                  child: buildOutlinedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => No_internet_connection()),
+                      );
+                    },
+                    buttonColor: Kgreen,
+                    buttonTextColor: Kwhite,
+                  ),
                 ),
-                buildOutlinedButton(onPressed: (){}, buttonColor: Kwhite, buttonTextColor: Kgreen,),
+                buildOutlinedButton(
+                  onPressed: () {},
+                  buttonColor: Kwhite,
+                  buttonTextColor: Kgreen,
+                ),
               ],
             )
           ],
@@ -74,36 +83,25 @@ class No_internet_connection extends StatelessWidget {
 }
 
 class buildOutlinedButton extends StatelessWidget {
-   buildOutlinedButton({required this.onPressed, required this.buttonColor, required this.buttonTextColor});
-   Function onPressed;
-   Color? buttonColor;
-   Color? buttonTextColor;
+  buildOutlinedButton(
+      {required this.onPressed,
+      required this.buttonColor,
+      required this.buttonTextColor});
+  Function onPressed;
+  Color? buttonColor;
+  Color? buttonTextColor;
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
-                onPressed: onPressed(),
-                child: Text(
-                  'buttonText',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700,
-                    color: buttonTextColor,
-                  ),
-                ),
-                style: OutlinedButton.styleFrom(
-                  side: BorderSide(
-                    color: Colors.grey,
-                  ),
-                ),
-              );
+      onPressed: onPressed(),
+      child: Text(
+        'buttonText',
+        style: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.w700,
+          color: buttonTextColor,
+        ),
+      ),
+    );
   }
 }
-
-// ButtonStyle(
-// backgroundColor: WidgetStatePropertyAll(buttonColor),
-// shape: WidgetStatePropertyAll<RoundedRectangleBorder>(
-// RoundedRectangleBorder(
-// borderRadius: BorderRadius.circular(8),
-// ),
-// ),
-// ),
