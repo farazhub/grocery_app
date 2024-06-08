@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
-import 'login_page.dart';
-import 'splash_screen.dart'; // Make sure to import your splash screen file
+import 'splash_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        fontFamily: 'Poppins-Medium.ttf',
-      ),
-      home: LoginPage(),
-      // home: SplashScreen(), // Set the splash screen as the initial route
-    );
+        theme: ThemeData(
+            useMaterial3: true,
+            colorScheme: ColorScheme.light(),
+            fontFamily: 'Poppins'),
+        home: Scaffold(
+          body: SplashScreen(),
+          ),
+        );
   }
 }
