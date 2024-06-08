@@ -1,3 +1,6 @@
+import 'dart:ui';
+import 'package:grocery_app/splash_screen.dart';
+import 'outlinedbutton.dart';
 import 'constants.dart';
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
@@ -33,9 +36,14 @@ class No_internet_connection extends StatelessWidget {
                     SizedBox(
                       width: 320,
                     ),
-                    Icon(
-                      Icons.cancel,
-                      color: Colors.grey,
+                    GestureDetector(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => SplashScreen()));
+                      },
+                      child: Icon(
+                        Icons.cancel,
+                        color: Colors.grey,
+                      ),
                     ),
                   ],
                 ),
@@ -60,11 +68,21 @@ class No_internet_connection extends StatelessWidget {
                   ),
                 ),
                 newOutlinedButton(
+                  onPressed: () =>
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => HomePage(),
+                      ),
+                    ),
                   buttonText: "Try Again",
                   buttonBackgroundColor: Kgreen,
                   buttonTextColor: Colors.white,
                 ),
                 newOutlinedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                   buttonText: "Cancel",
                   buttonBackgroundColor: Colors.white,
                   buttonTextColor: Colors.black,
@@ -78,39 +96,7 @@ class No_internet_connection extends StatelessWidget {
   }
 }
 
-class newOutlinedButton extends StatelessWidget {
-  newOutlinedButton(
-      {required this.buttonText,
-      required this.buttonBackgroundColor,
-      required this.buttonTextColor});
 
-  String buttonText;
-  Color buttonBackgroundColor;
-  Color buttonTextColor;
-
-  @override
-  Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () {},
-      child: Text(
-        buttonText,
-        style: TextStyle(
-          fontSize: 22,
-          fontWeight: FontWeight.w700,
-          color: buttonTextColor,
-        ),
-      ),
-      style: ButtonStyle(
-        backgroundColor: WidgetStateProperty.all(buttonBackgroundColor),
-        shape: WidgetStateProperty.all(
-          RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-        ),
-      ),
-    );
-  }
-}
 //
 // class buildOutlinedButton extends StatelessWidget {
 //   buildOutlinedButton(

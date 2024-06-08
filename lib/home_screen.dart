@@ -1,5 +1,7 @@
 import 'dart:ffi';
 import 'package:flutter/material.dart';
+import 'outlinedbutton.dart';
+import 'constants.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -9,17 +11,21 @@ class HomePage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              SizedBox(
+                height: 130,
+              ),
               Image(
                 image: AssetImage("images/scooter.png"),
               ),
-              Container(
-                width: 280,
+              Padding(
+                padding: const EdgeInsets.only(left: 30.0, right: 30.0),
                 child: Text(
                   'Get your groceries delivered in few minutes',
                   textAlign: TextAlign.center,
-                  style:
-                  TextStyle(
+                  style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 23,
                   ),
@@ -29,16 +35,15 @@ class HomePage extends StatelessWidget {
                 child: SizedBox(
                 ),
               ),
-              TextButton(
-                onPressed: () {},
-                child: Text(
-                  'Get Started',
-                ),
-                style: TextButton.styleFrom(
-                ),
-              ),
+              newOutlinedButton(
+                  onPressed: () {},
+                  buttonText: 'Get Started',
+                  buttonBackgroundColor: Kgreen,
+                  buttonTextColor: Kwhite),
+
             ],
           ),
+
         ),
       ),
     );

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
 import 'no_internet_connection.dart';
 
 class SplashScreen extends StatefulWidget {
