@@ -1,24 +1,20 @@
 import 'package:flutter/material.dart';
-import 'no_internet_connection.dart';
-import 'splash_screen.dart';
+import 'login_page.dart';
+import 'splash_screen.dart'; // Make sure to import your splash screen file
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData(
-            useMaterial3: true,
-            colorScheme: ColorScheme.light(),
-            fontFamily: 'Poppins'),
-        home: Scaffold(
-          body: SplashScreen(),
-          ),
-        );
+      theme: ThemeData(
+        fontFamily: 'Poppins-Medium.ttf',
+      ),
+      home: LoginPage(),
+      // home: SplashScreen(), // Set the splash screen as the initial route
+    );
   }
 }

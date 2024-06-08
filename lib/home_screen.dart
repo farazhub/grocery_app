@@ -1,4 +1,5 @@
 import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -33,8 +34,6 @@ class HomePage extends StatelessWidget {
                 onPressed: () {},
                 child: Text(
                   'Get Started',
-                ),
-                style: TextButton.styleFrom(
                 ),
               ),
             ],
