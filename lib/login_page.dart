@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:grocery_app/outlinedbutton.dart';
+import 'package:grocery_app/outlined_button.dart';
 import 'input_box.dart';
 import 'constants.dart';
 
@@ -23,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
             padding: const EdgeInsets.fromLTRB(20, 15, 20, 5),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Column(
                   children: [
@@ -100,6 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
                 Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     newOutlinedButton(
                       onPressed: () {},
@@ -130,17 +129,53 @@ class _LoginPageState extends State<LoginPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.apple),
-                        Icon(
-                          Icons.facebook,
-                          color: Colors.lightBlue,
+                        Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: Colors.grey,
+                            ),
+                          ),
+                            child: Icon(Icons.apple)),
+                        Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: Colors.grey,
+                            ),
+                          ),
+                          child: Icon(
+                            Icons.facebook,
+                            color: Colors.lightBlue,
+                          ),
                         ),
-                        Image(
-                          image: AssetImage('images/logo.png'),
-                            width: 20,
+                        Container(
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: Colors.grey,
+                            ),
+                          ),
+                          child: Image(
+                            image: AssetImage('images/google_icon.png'),
+                              width: 20,
+                          ),
                         ),
                       ],
                     ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Don't have account?",
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),),
+                        Text("SIGN UP",
+                          style: TextStyle(
+                            color: Kgreen,
+                          ),)
+                      ],
+                    )
                   ],
                 ),
               ],

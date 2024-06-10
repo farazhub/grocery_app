@@ -1,7 +1,7 @@
 import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:grocery_app/login_page.dart';
-import 'outlinedbutton.dart';
+import 'outlined_button.dart';
 import 'constants.dart';
 
 class HomePage extends StatelessWidget {
