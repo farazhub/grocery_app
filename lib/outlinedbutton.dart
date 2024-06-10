@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class newOutlinedButton extends StatelessWidget {
+class newOutlinedButton extends StatefulWidget {
   newOutlinedButton(
       {required this.onPressed,
       required this.buttonText,
@@ -13,19 +13,24 @@ class newOutlinedButton extends StatelessWidget {
   Color buttonTextColor;
 
   @override
+  State<newOutlinedButton> createState() => _newOutlinedButtonState();
+}
+
+class _newOutlinedButtonState extends State<newOutlinedButton> {
+  @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: onPressed,
+      onPressed: widget.onPressed,
       child: Text(
-        buttonText,
+        widget.buttonText,
         style: TextStyle(
           fontSize: 22,
           fontWeight: FontWeight.w700,
-          color: buttonTextColor,
+          color: widget.buttonTextColor,
         ),
       ),
       style: ButtonStyle(
-          backgroundColor: WidgetStateProperty.all(buttonBackgroundColor),
+          backgroundColor: WidgetStateProperty.all(widget.buttonBackgroundColor),
           shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),

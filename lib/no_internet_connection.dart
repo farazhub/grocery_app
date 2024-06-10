@@ -3,7 +3,7 @@ import 'package:grocery_app/splash_screen.dart';
 import 'outlinedbutton.dart';
 import 'constants.dart';
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
+import 'on_boarding_screen.dart';
 
 class No_internet_connection extends StatelessWidget {
   No_internet_connection();
@@ -17,77 +17,83 @@ class No_internet_connection extends StatelessWidget {
           fontFamily: 'Poppins'),
       home: Scaffold(
         body: Center(
-          child: Container(
-            margin: const EdgeInsets.all(15),
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: Colors.grey,
-                width: 2,
+          child: Expanded(
+            child: Container(
+              margin: const EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: Colors.grey,
+                  width: 2,
+                ),
+                borderRadius: BorderRadius.circular(20),
               ),
-              borderRadius: BorderRadius.circular(20),
-            ),
-            height: 600,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Row(
+              height: 600,
+              child: Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    SizedBox(
-                      width: 320,
-                    ),
-                    GestureDetector(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => SplashScreen()));
-                      },
-                      child: Icon(
-                        Icons.cancel,
-                        color: Colors.grey,
+                    Expanded(
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 300,
+                          ),
+                          GestureDetector(
+                            onTap: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => SplashScreen()));
+                            },
+                            child: Icon(
+                              Icons.cancel,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ],
                       ),
+                    ),
+                    Image(
+                      image: AssetImage("images/bro.png"),
+                    ),
+                    Text(
+                      'Oooops!!!',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                      ),
+                    ),
+                    Text(
+                      'No internet connection found, Please check your internet connection',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xFF797979),
+                        fontSize: 13,
+                      ),
+                    ),
+                    newOutlinedButton(
+                      onPressed: () =>
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => HomePage(),
+                          ),
+                        ),
+                      buttonText: "Try Again",
+                      buttonBackgroundColor: Kgreen,
+                      buttonTextColor: Colors.white,
+                    ),
+                    newOutlinedButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      buttonText: "Cancel",
+                      buttonBackgroundColor: Colors.white,
+                      buttonTextColor: Colors.black,
                     ),
                   ],
                 ),
-                Image(
-                  image: AssetImage("images/bro.png"),
-                ),
-                Text(
-                  'Oooops!!!',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 20,
-                  ),
-                ),
-                Text(
-                  'No internet connection found, Please check your internet connection',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    color: Color(0xFF797979),
-                    fontSize: 13,
-                  ),
-                ),
-                newOutlinedButton(
-                  onPressed: () =>
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => HomePage(),
-                      ),
-                    ),
-                  buttonText: "Try Again",
-                  buttonBackgroundColor: Kgreen,
-                  buttonTextColor: Colors.white,
-                ),
-                newOutlinedButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  buttonText: "Cancel",
-                  buttonBackgroundColor: Colors.white,
-                  buttonTextColor: Colors.black,
-                ),
-              ],
+              ),
             ),
           ),
         ),

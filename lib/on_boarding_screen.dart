@@ -1,5 +1,6 @@
 import 'dart:ffi';
 import 'package:flutter/material.dart';
+import 'package:grocery_app/login_page.dart';
 import 'outlinedbutton.dart';
 import 'constants.dart';
 
@@ -32,18 +33,22 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: SizedBox(
-                ),
+                child: SizedBox(),
               ),
               newOutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginPage(),
+                      ),
+                    );
+                  },
                   buttonText: 'Get Started',
                   buttonBackgroundColor: Kgreen,
                   buttonTextColor: Kwhite),
-
             ],
           ),
-
         ),
       ),
     );
