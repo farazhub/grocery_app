@@ -84,8 +84,12 @@ class No_internet_connection extends StatelessWidget {
                       buttonTextColor: Colors.white,
                     ),
                     newOutlinedButton(
-                      onPressed: () {
-                        Navigator.pop(context);
+                      onPressed: () {Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SplashScreen(),
+                        ),
+                      );
                       },
                       buttonText: "Cancel",
                       buttonBackgroundColor: Colors.white,
