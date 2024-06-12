@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
 import 'no_internet_connection.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -27,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Image(
-            image: AssetImage("images/splash.png"),
+            image: AssetImage("images/logo.png"),
           ),
           Text(
             'Grocery App',
