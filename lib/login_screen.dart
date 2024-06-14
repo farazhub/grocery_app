@@ -91,13 +91,14 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         Spacer(),
                         GestureDetector(
-                          onTap:(){
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ForgetScreen(),
-                            ),
-                          );},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ForgetScreen(),
+                              ),
+                            );
+                          },
                           child: Text(
                             'Forgot Password?',
                             style: TextStyle(
@@ -114,7 +115,14 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     newOutlinedButton(
-                      onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>LocationScreen(),),);},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LocationScreen(),
+                          ),
+                        );
+                      },
                       buttonText: 'Login',
                       buttonBackgroundColor: Kgreen,
                       buttonTextColor: Kwhite,
@@ -182,8 +190,7 @@ class _LoginPageState extends State<LoginPage> {
                         Text(
                           "Don't have account? ",
                           style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black),
+                              fontWeight: FontWeight.bold, color: Colors.black),
                         ),
                         GestureDetector(
                           onTap: () {

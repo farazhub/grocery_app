@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/constants.dart';
+import 'package:grocery_app/home_screen.dart';
 import 'package:grocery_app/outlined_button.dart';
 
 class LocationScreen extends StatelessWidget {
@@ -35,7 +36,9 @@ class LocationScreen extends StatelessWidget {
               SizedBox(
                 height: 15,
               ),
-              newOutlinedButton(onPressed: (){}, buttonText: 'Allow Location Access', buttonBackgroundColor: Kgreen, buttonTextColor: Kwhite),
+              newOutlinedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> HomeScreen(),),);
+              }, buttonText: 'Allow Location Access', buttonBackgroundColor: Kgreen, buttonTextColor: Kwhite),
               SizedBox(
                 height: 15,
               ),

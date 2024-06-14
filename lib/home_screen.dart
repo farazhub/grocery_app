@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(12,0,12,0),
+                padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
                 child: Expanded(
                   child: Container(
                     decoration: BoxDecoration(
@@ -69,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(12,12,12,8),
+                padding: const EdgeInsets.fromLTRB(12, 12, 12, 8),
                 child: Expanded(
                   flex: 3,
                   child: Container(
@@ -130,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(12,0,12,0),
+                padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
                 child: Expanded(
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -156,7 +156,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(10,8,10,0),
+                padding: const EdgeInsets.fromLTRB(10, 8, 10, 0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -263,7 +263,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(12,8,12,8),
+                padding: const EdgeInsets.fromLTRB(12, 8, 12, 8),
                 child: Expanded(
                   child: Row(
                     children: [
@@ -340,10 +340,10 @@ class _HomeScreenState extends State<HomeScreen> {
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 Image(
-                                  image: AssetImage('images/home_apple.png'),
+                                  image: AssetImage('images/home_banana.png'),
                                 ),
                                 Text(
-                                  'Red Apple',
+                                  'Banana',
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
@@ -353,7 +353,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text(
-                                      "\$4.50  ",
+                                      "\$3.50  ",
                                       style: TextStyle(
                                         color: Kgreen,
                                         fontWeight: FontWeight.bold,
@@ -364,7 +364,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       height: 15,
                                       color: Colors.grey,
                                     ),
-                                    Text('  500 g'),
+                                    Text('  1 dz'),
                                   ],
                                 ),
                                 SizedBox(
@@ -391,19 +391,32 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
               ),
-              Expanded(
-                child: BottomAppBar(
-                  color: Kaqua,
-                  height: 50,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Icon(Icons.home_outlined, color: Color(0xFF878787),),
-                      Icon(Icons.apps_outlined, color: Color(0xFF878787),),
-                      Icon(Icons.shopping_bag_outlined, color: Color(0xFF878787),),
-                      Icon(Icons.person_2_outlined, color: Color(0xFF878787),),
-                    ],
-                  ),
+              BottomAppBar(
+                color: Kaqua,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Icon(
+                      Icons.home_outlined,
+                      size: 45,
+                      color: Color(0xFF878787),
+                    ),
+                    Icon(
+                      Icons.apps_outlined,
+                      size: 45,
+                      color: Color(0xFF878787),
+                    ),
+                    Icon(
+                      Icons.shopping_bag_outlined,
+                      size: 45,
+                      color: Color(0xFF878787),
+                    ),
+                    Icon(
+                      Icons.person_2_outlined,
+                      size: 45,
+                      color: Color(0xFF878787),
+                    ),
+                  ],
                 ),
               ),
             ],

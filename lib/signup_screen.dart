@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/location_screen.dart';
 import 'package:grocery_app/login_screen.dart';
 import 'package:grocery_app/outlined_button.dart';
 import 'input_box.dart';
@@ -128,7 +129,7 @@ class _SignupPageState extends State<SignupPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ForgetScreen(),
+                            builder: (context) => LocationScreen(),
                           ),
                         );},
                       buttonText: 'Signup',
