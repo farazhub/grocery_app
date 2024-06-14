@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/home_screen.dart';
 import 'splash_screen.dart';
 
 void main() {
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
             colorScheme: ColorScheme.light(),
             fontFamily: 'Poppins'),
         home: Scaffold(
-          body: SplashScreen(),
+          body: HomeScreen(),
+          // body: SplashScreen(),
           ),
         );
   }

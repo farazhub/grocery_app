@@ -22,7 +22,7 @@ class newInputBox extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Icon(icon),
+          Icon(icon,color: Colors.grey,),
           SizedBox(
             width: 10,
           ),
@@ -32,7 +32,7 @@ class newInputBox extends StatelessWidget {
               color: Color(0xFF797979),
             ),),
           Spacer(),
-          Icon(secondIcon,),
+          Icon(secondIcon, color: Colors.grey,),
         ],
       ),
     );

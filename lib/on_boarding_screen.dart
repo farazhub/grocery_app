@@ -1,6 +1,6 @@
 import 'dart:ffi';
 import 'package:flutter/material.dart';
-import 'package:grocery_app/login_page.dart';
+import 'package:grocery_app/login_screen.dart';
 import 'outlined_button.dart';
 import 'constants.dart';
 

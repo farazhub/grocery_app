@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'no_internet_connection.dart';
+import 'no_internet_connection_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   @override

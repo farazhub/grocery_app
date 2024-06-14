@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/login_screen.dart';
 import 'package:grocery_app/outlined_button.dart';
 import 'input_box.dart';
+import 'forget_screen.dart';
 import 'constants.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class SignupPage extends StatefulWidget {
+  const SignupPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<SignupPage> createState() => _SignupPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignupPageState extends State<SignupPage> {
   bool? isChecked = false;
   @override
   Widget build(BuildContext context) {
@@ -63,6 +65,18 @@ class _LoginPageState extends State<LoginPage> {
                       text: '********************',
                       secondIcon: Icons.visibility_off_outlined,
                     ),
+                    Text(
+                      'Confirm Password',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                    newInputBox(
+                      icon: Icons.lock_open_rounded,
+                      text: '********************',
+                      secondIcon: Icons.visibility_off_outlined,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
@@ -86,11 +100,20 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                         Spacer(),
-                        Text(
-                          'Forgot Password?',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 11,
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ForgetScreen(),
+                              ),
+                            );},
+                          child: Text(
+                            'Forgot Password?',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 11,
+                            ),
                           ),
                         )
                       ],
@@ -101,8 +124,14 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     newOutlinedButton(
-                      onPressed: () {},
-                      buttonText: 'Login',
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ForgetScreen(),
+                          ),
+                        );},
+                      buttonText: 'Signup',
                       buttonBackgroundColor: Kgreen,
                       buttonTextColor: Kwhite,
                     ),
@@ -116,7 +145,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 8, right: 8),
-                          child: Text('or sign in with'),
+                          child: Text('or sign up with'),
                         ),
                         Expanded(
                           child: Divider(
@@ -130,12 +159,12 @@ class _LoginPageState extends State<LoginPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            border: Border.all(
-                              color: Colors.grey,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: Colors.grey,
+                              ),
                             ),
-                          ),
                             child: Icon(Icons.apple)),
                         Container(
                           decoration: BoxDecoration(
@@ -158,7 +187,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           child: Image(
                             image: AssetImage('images/google_icon.png'),
-                              width: 20,
+                            width: 20,
                           ),
                         ),
                       ],
@@ -166,14 +195,30 @@ class _LoginPageState extends State<LoginPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("Don't have account?",
+                        Text(
+                          "Already have an account? ",
                           style: TextStyle(
+                            fontWeight: FontWeight.bold,
                             color: Colors.black,
-                          ),),
-                        Text("SIGN UP",
-                          style: TextStyle(
-                            color: Kgreen,
-                          ),)
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => LoginPage(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            " LOGIN",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Kgreen,
+                            ),
+                          ),
+                        )
                       ],
                     )
                   ],

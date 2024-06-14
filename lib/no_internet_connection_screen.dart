@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:grocery_app/splash_screen.dart';
 import 'outlined_button.dart';
 import 'constants.dart';
@@ -40,8 +39,11 @@ class No_internet_connection extends StatelessWidget {
                             width: 300,
                           ),
                           GestureDetector(
-                            onTap: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => SplashScreen()));
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SplashScreen()));
                             },
                             child: Icon(
                               Icons.cancel,
@@ -72,24 +74,24 @@ class No_internet_connection extends StatelessWidget {
                       ),
                     ),
                     newOutlinedButton(
-                      onPressed: () =>
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => HomePage(),
-                          ),
+                      onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => HomePage(),
                         ),
+                      ),
                       buttonText: "Try Again",
                       buttonBackgroundColor: Kgreen,
                       buttonTextColor: Colors.white,
                     ),
                     newOutlinedButton(
-                      onPressed: () {Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => SplashScreen(),
-                        ),
-                      );
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SplashScreen(),
+                          ),
+                        );
                       },
                       buttonText: "Cancel",
                       buttonBackgroundColor: Colors.white,
@@ -105,36 +107,3 @@ class No_internet_connection extends StatelessWidget {
     );
   }
 }
-
-
-//
-// class buildOutlinedButton extends StatelessWidget {
-//   buildOutlinedButton(
-//       {required this.onPressed,
-//       required this.buttonText,
-//       required this.buttonColor,
-//       required this.buttonTextColor});
-//   Function onPressed;
-//   String buttonText;
-//   Color? buttonColor;
-//   Color? buttonTextColor;
-//   @override
-//   Widget build(BuildContext context) {
-//     return OutlinedButton(
-//       onPressed: onPressed(),
-//       child: Text(
-//         buttonText,
-//         style: TextStyle(
-//           fontSize: 22,
-//           fontWeight: FontWeight.w700,
-//           color: buttonTextColor,
-//         ),
-//       ),
-//     );
-//   }
-// }
-// buildOutlinedButton(
-//     onPressed: () {},
-//     buttonText: "Try Again",
-//     buttonColor: Kgreen,
-//     buttonTextColor: Kwhite)
